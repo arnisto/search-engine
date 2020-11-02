@@ -7,25 +7,35 @@
         <meta name="revised" content="gaidiLamjed , 18/7/2020">
         <meta name="robots" content="index,follow,archive"> 
     <!--    <link rel="icon" href="logo/logo2.ico" type="image/x-icon">  -->
-        <title >another amazing world عالم اخر</title>
+        <title >search-engine</title>
 
 
         <link rel="stylesheet" href="fontawesome/css/all.css">
         <link rel="stylesheet" href="css/bootstrap.min.css" >
         <link rel="stylesheet" href="css/style_moteur_de_recherche.css" >
+        
         <!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
         <script src="js/jquery2.js"></script>
         <script src="js/bootstrap.min.js"></script>
 	</head>
-    <body >
+    <body style="background-color:rgb(240,245,250)">
     <!--be champ de recherche-->
-   <div style="margin:5% 20%;">
-        <input id="mot_de_recherche" rows="1" cols="33">search for ...</input>     
-     <button  type="button" onclick="search_result_ft(document.getElementById('mot_de_recherche').value)"><i class="fas fa-search" aria-hidden="true"></i></button>
-    <button onclick="add_new_article()"><i class="fas fa-plus"></i></button>
-    </div>
-    <div id="place_for_the_results_of_searching" style="float:left;background-color:yellow;"></div>
-    <div  style="width:500px;position:fixed;top:100px;right:20px;"><h1>contenu</h1>
+    <div id="search_lamjed_gaidi" style="position:fixed;margin:1% 1% 1% 60%;width:38%;">
+     
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+             <button  type="button" class="btn btn-secondary btn-sm" onclick="search_result_ft(document.getElementById('mot_de_recherche').value)"><i class="fas fa-search" aria-hidden="true"></i></button>
+            </div>
+            <input id="mot_de_recherche" class="form-control mr-sm-2" rows="1" cols="28">    
+            <div class="input-group-append">
+             <button class="btn btn-secondary btn-sm" onclick="add_new_article()"><i class="fas fa-plus"></i></button>
+            </div>
+         </div>
+
+     </div>
+   
+    <div id="place_for_the_results_of_searching" class="overflow-auto messages-list" style="padding:1% 1% 1% 1%;float:left;width:25%;height:100%;"></div>
+    <div  style="padding:1%;width:73%;height:85%;position:fixed;top:100px;right:20px;background-color:green;">
         <div id="contenu_article">
         ici
         </div>
