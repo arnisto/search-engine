@@ -140,9 +140,9 @@
           var confirm_password = $('#add_new_article_confirm_password').val();
           var article_is_main_data = richTextField.document.body.innerHTML;
         
-          var infos = 'Titre='+title+'&Obj='+obj+'&Author='+author+'&Permition='+permition+'&Password='+password+'&Data='+article_is_main_data ;
-          if (password == confirm_password){
-                alert(infos);
+          var infos = 'Titre='+title+'&Obj='+obj+'&Author='+author+'&Permition='+permition+'&Password='+password+'&Data='+encodeURIComponent(article_is_main_data) ;
+         alert(article_is_main_data);
+           if (password == confirm_password){
                 $.ajax
                 ({
                     type: "POST",
@@ -193,42 +193,51 @@
                 cache: false,
                 success: function(data)
                 {
-                    $("#contenu_article").html(data);
+                    var jason = JSON.parse(data);
+                   $("#contenu_article").html(jason.data1) ;
+                    richTextField.document.designMode = "On";
+                    richTextField.document.body.innerHTML = jason.data2 ;
+                        
+                  
+                  
+                   
+                    
+                    
                 } 
             });
         }
         function confirm_edit_and_password(password,id){
             alert('password= '+password);
             var password_to_confirm = $('#edit_article_password_verification').val();
-            var new_data_to_edit_article = $('#edit_article_new_data_to_add_it').val();
+            var new_data_to_edit_article = richTextField.document.body.innerHTML ;
             alert('password2= '+password_to_confirm);
             alert('new_data= '+new_data_to_edit_article);
             if(password == password_to_confirm){
-                alert('password verified');
-                $.ajax
-            ({
-                type: "POST",
-                url: "add_modification_to_the_data_base.php",
-                data: 'article_id='+id+'&new_data='+new_data_to_edit_article,
-                cache: false,
-                success: function(data)
-                {
-                    alert(data);
-                } 
-            });
+                    alert('password verified');
+                    $.ajax
+                ({
+                    type: "POST",
+                    url: "add_modification_to_the_data_base.php",
+                    data: 'article_id='+id+'&new_data='+encodeURIComponent(new_data_to_edit_article),
+                    cache: false,
+                    success: function(data)
+                    {
+                        alert(data);
+                    } 
+                });
             }else{
                 alert('you can not edit this article; verifie your password');
             }
 
         }
         function confirm_edit_without_permission(id){
-            var new_data_to_edit_article_wp = $('#edit_article_new_data_to_add_it_without_permission').val();
+            var new_data_to_edit_article_wp = richTextField.document.body.innerHTML ;
             alert(new_data_to_edit_article_wp);
             $.ajax
             ({
                 type: "POST",
                 url: "add_modification_to_the_data_base_without_permission.php",
-                data: 'article_id='+id+'&new_data='+new_data_to_edit_article_wp,
+                data: 'article_id='+id+'&new_data='+encodeURIComponent(new_data_to_edit_article_wp),
                 cache: false,
                 success: function(data)
                 {

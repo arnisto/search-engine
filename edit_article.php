@@ -10,9 +10,14 @@ $sql="SELECT article_id,article_data,auteur,permission_edit,article_password FRO
 $res = $conn->query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 if($res->num_rows > 0){
     $row = mysqli_fetch_assoc($res);
-    if($row['permission_edit'] == 'false' ){
-                echo '
-                <input id="edit_article_password_verification" type="password" placeholder="password"></input> </br>
+    if($row['article_data']){
+        $message2 = $row['article_data'];
+    }else{
+        $message2 = 'no data';
+    }
+   
+        
+                $message1 = '
                 <div onload="enableEditMode();">
         <div >
             <button class="btn btn-light" onclick="execCmd('."'bold'".');"><i class="fa fa-bold"></i></button>
@@ -71,22 +76,28 @@ if($res->num_rows > 0){
             <button class="btn btn-light" onclick="execCommandWithArg('."'insertImage'".',prompt('."'Enter the image URL'".','."''".'));"><i class="far fa-file-image"></i></button>
             <button class="btn btn-light" onclick="execCmd("selectAll");">Select All</button>
         </div>
-        <iframe id="edit_article_new_data_to_add_it_2" name="richTextField" rows="7" width="100%" height="350" src="'.$row['article_data'].'"></iframe>
-
+        <iframe id="edit_article_new_data_to_add_it_2" name="richTextField" rows="7" width="100%" height="350" ></iframe>
+      
         
     </div>
-               
-                <p></br><small><b>auteur:'.$row['auteur'].'</b></small></p>
-                <button type="button" class="btn btn-primary" onclick="confirm_edit_and_password('.$row['article_password'].','.$row['article_id'].')">Primary</button>';
-
+    <p></br><small><b>auteur:'.$row['auteur'].'</b></small></p>  
+               ';
+                if($row['permission_edit'] == 'false' ){
+                    $message1 =$message1 . ' 
+                    <div class="row">
+                    <input id="edit_article_password_verification" class="form-control col-form-label-sm col-md-3" type="password" placeholder="password"></input> </br>
+                    </br>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="confirm_edit_and_password('.$row['article_password'].','.$row['article_id'].')">Sub</button></div>';
             }else{
-                echo '
-                <textarea id="edit_article_new_data_to_add_it_without_permission" >data:'.$row['article_data'].'</textarea></br>
-                <p></br><small><b>auteur:'.$row['auteur'].'</b></small></p>
-                <button type="button" class="btn btn-primary" onclick="confirm_edit_without_permission('.$row['article_id'].')">Primary</button>';
+                $message1 =$message1 . '
+                <button type="button" class="btn btn-primary btn-sm" onclick="confirm_edit_without_permission('.$row['article_id'].')">Sub</button>';
 
             }
         }else{
-            echo 'no data found';
-        }            
+            $message1 = 'no data found';
+        } 
+        
+        echo json_encode(
+            array("data1" => $message1, 
+            "data2" => $message2) );
 ?>
