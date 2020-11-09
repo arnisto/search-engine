@@ -85,9 +85,11 @@ if($res->num_rows > 0){
                 if($row['permission_edit'] == 'false' ){
                     $message1 =$message1 . ' 
                     <div class="row">
-                    <input id="edit_article_password_verification" class="form-control col-form-label-sm col-md-3" type="password" placeholder="password"></input> </br>
+                    <button type="button" style="margin:2%;" class="btn btn-primary btn-sm" onclick="confirm_edit_and_password('.'\''.$row['article_password'].'\''.','.$row['article_id'].')">Sub</button>
+                     </br>
                     </br>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="confirm_edit_and_password('.$row['article_password'].','.$row['article_id'].')">Sub</button></div>';
+                    <input id="edit_article_password_verification" class="form-control col-form-label-sm col-md-3" type="password" placeholder="password"></input>
+                    </div>';
             }else{
                 $message1 =$message1 . '
                 <button type="button" class="btn btn-primary btn-sm" onclick="confirm_edit_without_permission('.$row['article_id'].')">Sub</button>';

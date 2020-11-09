@@ -35,8 +35,8 @@
      </div>
    
     <div id="place_for_the_results_of_searching" class="overflow-auto messages-list" style="padding:1% 1% 1% 1%;float:left;width:25%;height:100%;"></div>
-    <div  style="padding:1%;width:73%;height:85%;position:fixed;top:100px;right:20px;background-color:green;">
-        <div id="contenu_article">
+    <div class="overflow-auto messages-list"  style="padding:1%;width:73%;height:85%;position:fixed;top:100px;right:20px;background-color:green;">
+        <div id="contenu_article" >
         ici
         </div>
     </div>
@@ -245,8 +245,20 @@
                 } 
             });
         }
-        function edit_article_is_permission(id){
-            alert('the id for the article that you wonna chage its permission is :'+id);
+        function edit_article_is_permission(id,permission){
+            var password = prompt("Enter your password");
+            alert(permission);
+            $.ajax
+            ({
+                type: "POST",
+                url: "edit_permission_value.php",
+                data: 'permission='+permission+'&article_id='+id+'&password='+password,
+                cache: false,
+                success: function(data)
+                {
+                    alert(data);
+                } 
+            });
         }
        
   
