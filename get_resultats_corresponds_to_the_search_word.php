@@ -11,15 +11,15 @@
         if($res->num_rows > 0){
             
             while($row = mysqli_fetch_assoc($res)){
-            echo "<div  class='border-left' style='-webkit-box-shadow: -7px 1px 0px 1px rgba(0,0,0,0.99); 
-            box-shadow: -7px 1px 0px 1px rgba(0,0,0,0.99);margin:2%;padding:2%;'><h3>".$row['titre']."</h3><small>".$row['article_obj']."</small>
-            </br><button onclick='chow_article_data(".$row['article_id'].")'>click</button>
-            <button onclick='update_score_up(".$row["article_id"].")'><i class='fas fa-angle-up'></i></button>
+            echo "<div id='results_of_the_search_id'  class='border-left' ><h3>".$row['titre']."</h3><small>".$row['article_obj']."</small>
+            </br>
+            <button class='boutton_search_results' onclick='update_score_up(".$row["article_id"].")'><i class='fas fa-angle-up'></i></button>
             <small  id='like_dislike_loop_score_v".$row["article_id"]."'>".$row['rang_v']."</small>
-            <button onclick='update_score_down(".$row["article_id"].")'><i class='fas fa-angle-down'></i></button>
-            <button onclick='update_score_left(".$row["article_id"].")'><i class='fas fa-angle-left'></i></button>
+            <button class='boutton_search_results' onclick='update_score_down(".$row["article_id"].")'><i class='fas fa-angle-down'></i></button>
+            <button class='boutton_search_results' onclick='update_score_left(".$row["article_id"].")'><i class='fas fa-angle-left'></i></button>
             <small id='like_dislike_loop_score_h".$row["article_id"]."'>".$row['rang_h']."</small>
-            <button onclick='update_score_right(".$row["article_id"].")'><i class='fas fa-angle-right'></i></button>
+            <button class='boutton_search_results' onclick='update_score_right(".$row["article_id"].")'><i class='fas fa-angle-right'></i></button>
+            <button class='boutton_search_results' id='boutton_search_results_click'  onclick='chow_article_data(".$row['article_id'].")'>click</button>
             </div>";
             }
             

@@ -2,12 +2,13 @@
 <html>
 	<head>
         <meta charset="utf-8">
+        <link rel="icon" href="img/lm.ico" type="image/x-icon">
         <meta name="viewport" content="width=device-width , initial-scale=1">
-        <meta name="author" content="GAIDI LAMJED"> 
-        <meta name="revised" content="gaidiLamjed , 18/7/2020">
+        <meta name="author" content="GAIDI LAMJED MOHANED ABID"> 
+        <meta name="revised" content="gaidiLamjed mohaned abid, 18/7/2020">
         <meta name="robots" content="index,follow,archive"> 
     <!--    <link rel="icon" href="logo/logo2.ico" type="image/x-icon">  -->
-        <title >search-engine</title>
+        <title >IsSearchEngine</title>
 
 
         <link rel="stylesheet" href="fontawesome/css/all.css">
@@ -18,24 +19,26 @@
         <script src="js/jquery2.js"></script>
         <script src="js/bootstrap.min.js"></script>
 	</head>
-    <body style="background-color:rgb(240,245,250)">
+    <body style="background-image: url('img/this.jpg');background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
     <!--be champ de recherche-->
-    <div id="search_lamjed_gaidi" style="position:fixed;margin:1% 1% 1% 60%;width:38%;">
+    <div id="search_lamjed_gaidi" >
      
-         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-             <button  type="button" class="btn btn-secondary btn-sm" onclick="search_result_ft(document.getElementById('mot_de_recherche').value)"><i class="fas fa-search" aria-hidden="true"></i></button>
-            </div>
-            <input id="mot_de_recherche" class="form-control mr-sm-2" rows="1" cols="28">    
-            <div class="input-group-append">
-             <button class="btn btn-secondary btn-sm" onclick="add_new_article()"><i class="fas fa-plus"></i></button>
-            </div>
-         </div>
+    <img src="img/searchengine.png" alt="Simply Easy Learning" width="100"
+         height="50">
+            
+            <input id="mot_de_recherche"  rows="1" cols="28" placeholder="Search...">    
+            <button  type="button" class="search_buttons" onclick="search_result_ft(document.getElementById('mot_de_recherche').value)"><i class="fas fa-search" aria-hidden="true"></i></button>
+             <button class="search_buttons" onclick="add_new_article()"><i class="fas fa-plus"></i></button>
+             <img src="img/by.png" alt="Simply Easy Learning" width="120"
+         height="80">
+         
 
      </div>
    
     <div id="place_for_the_results_of_searching" class="overflow-auto messages-list" style="padding:1% 1% 1% 1%;float:left;width:25%;height:100%;"></div>
-    <div class="overflow-auto messages-list"  style="padding:1%;width:73%;height:85%;position:fixed;top:100px;right:20px;background-color:green;">
+    <div class="overflow-auto messages-list" id="main_place_for_the_data"  >
         <div id="contenu_article" >
         ici
         </div>
@@ -141,7 +144,7 @@
           var article_is_main_data = richTextField.document.body.innerHTML;
         
           var infos = 'Titre='+title+'&Obj='+obj+'&Author='+author+'&Permition='+permition+'&Password='+password+'&Data='+encodeURIComponent(article_is_main_data) ;
-         alert(article_is_main_data);
+         //alert(article_is_main_data);
            if (password == confirm_password){
                 $.ajax
                 ({
@@ -207,11 +210,11 @@
             });
         }
         function confirm_edit_and_password(password,id){
-            alert('password= '+password);
+            //alert('password= '+password);
             var password_to_confirm = $('#edit_article_password_verification').val();
             var new_data_to_edit_article = richTextField.document.body.innerHTML ;
-            alert('password2= '+password_to_confirm);
-            alert('new_data= '+new_data_to_edit_article);
+            //alert('password2= '+password_to_confirm);
+            //alert('new_data= '+new_data_to_edit_article);
             if(password == password_to_confirm){
                     alert('password verified');
                     $.ajax
@@ -232,7 +235,7 @@
         }
         function confirm_edit_without_permission(id){
             var new_data_to_edit_article_wp = richTextField.document.body.innerHTML ;
-            alert(new_data_to_edit_article_wp);
+            //alert(new_data_to_edit_article_wp);
             $.ajax
             ({
                 type: "POST",
@@ -247,7 +250,7 @@
         }
         function edit_article_is_permission(id,permission){
             var password = prompt("Enter your password");
-            alert(permission);
+            //alert(permission);
             $.ajax
             ({
                 type: "POST",
@@ -266,7 +269,7 @@
         var isInEditMode = true;
         
        function enableEditModelamjed(){
-           alert('lamjed gaidi');
+           //alert('lamjed gaidi');
             }
             function enableEditMode(){
                 richTextField.document.designMode = "On";

@@ -9,7 +9,7 @@ if($res->num_rows > 0){
                 
                 <button type='button' class='btn btn-light' onclick='edit_article(".$article_id_for_show.")'>Edit</button>
                 <button type='button' class='btn btn-light' onclick='edit_article_is_permission(".$article_id_for_show.",".$row['permission_edit'].")'>Edit Permission</button>
-                <h5>data:".$row['article_data']."</h5></br>
+                <h5>".$row['article_data']."</h5></br>
                 <p></br><small><b>auteur:".$row['auteur']."</b></small></p>";
 
             }

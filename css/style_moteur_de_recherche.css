@@ -1,3 +1,111 @@
+#main_place_for_the_data{
+    padding:1%;
+    width:73%;
+    height:85%;
+    position:fixed;
+    top:100px;
+    right:20px;
+    background-color:rgba(0,0,0,0.5);
+}
+#results_of_the_search_id{
+    background-color: rgba(0,0,0,0.5);
+    -webkit-box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.9);
+    -moz-box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.9);
+    box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.9);
+         margin:5% 2% 2% 2%;
+         padding:2%;
+}
+#results_of_the_search_id h3 {
+    font-family: 'Comic Sans MS', cursive;
+    color:white;
+    margin:0%;
+    text-align: center;
+     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+#results_of_the_search_id small {
+    font-family: 'Comic Sans MS', cursive;
+    color:white;
+    margin:0%;
+    text-align: center;
+     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+#results_of_the_search_id .boutton_search_results{
+    background:linear-gradient(to bottom, #7e948e 5%, #3e24d4 100%);
+	background-color:#7e948e;
+	border-radius:50%;
+	border:1px solid #2597e8;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:2px 7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2b665e;
+}
+#results_of_the_search_id .boutton_search_results:hover{
+    background:linear-gradient(to bottom, #3e24d4 5%, #7e948e 100%);
+	background-color:#3e24d4;
+}
+#results_of_the_search_id .boutton_search_results:active{
+    position:relative;
+	
+}
+#results_of_the_search_id #boutton_search_results_click {
+    float: right;
+}
+p , h5{
+    font-family: 'Comic Sans MS', cursive;
+    color:white;
+    margin:0%;
+     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+body{
+    font-family: 'Comic Sans MS', cursive;
+    color:white;
+    margin:0%;
+     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+
 #search_lamjed_gaidi{
-    background-color:yellow;
+    position:fixed;
+    margin:1% 1% 1% 20%;
+    width:70%;
+}
+#mot_de_recherche { 
+    border: 1px solid #848484; 
+    -webkit-border-radius: 30px; 
+    -moz-border-radius: 30px; 
+    border-radius: 30px; 
+    outline:0; 
+    height:50px; 
+    width: 400px; 
+    padding-left:10px; 
+    padding-right:10px; 
+    background-color:rgba(0,0,0,0.5);
+    color:#ffffff;
+  } 
+.search_buttons{
+    background:linear-gradient(to bottom, #9c45c7 5%, #2aa0bd 100%);
+	background-color:#9c45c7;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+  }
+  .search_buttons:hover {
+	background:linear-gradient(to bottom, #2aa0bd 5%, #9c45c7 100%);
+	background-color:#2aa0bd;
+}
+.search_buttons:active {
+	position:relative;
+	top:1px;
 }

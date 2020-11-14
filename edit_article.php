@@ -71,7 +71,7 @@ if($res->num_rows > 0){
                 <option value="6">6</option>
                 <option value="7">7</option>
             </select>
-            Fore Color: <input type="color" onchange="execCommandWithArg('."'foreColor'".',this.value);"/>
+            Fore Color: <input type="color" value="#ffffff" onchange="execCommandWithArg('."'foreColor'".',this.value);"/>
             Background: <input type="color" onchange="execCommandWithArg('."'hiliteColor'".',this.value);"/>
             <button class="btn btn-light" onclick="execCommandWithArg('."'insertImage'".',prompt('."'Enter the image URL'".','."''".'));"><i class="far fa-file-image"></i></button>
             <button class="btn btn-light" onclick="execCmd("selectAll");">Select All</button>
