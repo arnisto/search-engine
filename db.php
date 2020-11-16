@@ -1,6 +1,4 @@
 <?php
-//$con = mysqli_connect('127.0.0.1', 'root', '', 'anothezlamjed');
-//mysqli_set_charset($conn,"utf8");
 
 $conn = mysqli_connect('127.0.0.1', 'root', '', 'moteur_de_recherche');
 mysqli_set_charset($conn,"utf8");
