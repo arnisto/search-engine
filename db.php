@@ -1,5 +1,4 @@
 <?php
-//$conn = mysqli_connect('anothezlamjed.mysql.db', 'anothezlamjed', 'Beja07041997', 'anothezlamjed');
 //$con = mysqli_connect('127.0.0.1', 'root', '', 'anothezlamjed');
 //mysqli_set_charset($conn,"utf8");
 
